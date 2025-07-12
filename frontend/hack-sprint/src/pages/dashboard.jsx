@@ -4,9 +4,9 @@ import { toast } from 'react-toastify';
 
 const Dashboard = () => {
   const [data, setData] = useState({
-    nickname: 'User_Name',
-    github_id: 'example_id.github',
-    avatar_url: 'https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png',
+    nickname: 'User_Name', // Dummy data
+    github_id: 'example_id.github', // Dummy data
+    avatar_url: 'https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png', // Dummy data (GitHub logo)
     submissions: [
       {
         title: 'Hackathon of Code',
@@ -28,13 +28,9 @@ const Dashboard = () => {
 
   const navigate = useNavigate();
 
-
   const handleLogout = () => {
     localStorage.clear();
-    toast.success("Logout successfull...", { autoClose: 1000 })
-    setTimeout(() => {
-      navigate('/');
-    }, 1700)
+    navigate('/login');
   };
 
   return (
@@ -140,7 +136,6 @@ const Dashboard = () => {
           >
             <div
               style={{
-
                 position: 'relative',
                 width: '120px', // Same size as image
                 height: '120px',
@@ -151,9 +146,8 @@ const Dashboard = () => {
               }}
             >
               <img
-                src={data.avatar_url}
+                src={data.avatar_url} // Uses the dummy avatar_url
                 alt="avatar"
-
                 style={{
                   width: '100%',
                   height: '100%',
@@ -176,7 +170,7 @@ const Dashboard = () => {
 
           <div style={{ flexGrow: 1 }}>
             <h2 style={{ fontSize: '2rem', marginBottom: '0.5rem', color: 'white' }}>
-              {data.nickname}
+              {data.nickname} {/* Uses the dummy nickname */}
             </h2>
             <p style={{ display: 'flex', alignItems: 'center', fontSize: '1.2rem' }}>
               <span style={{ marginRight: '8px' }}>
@@ -191,7 +185,7 @@ const Dashboard = () => {
                   <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387 0.599 0.111 0.793-0.261 0.793-0.577v-2.234c-3.338 0.726-4.033-1.416-4.033-1.416-0.546-1.387-1.333-1.756-1.333-1.756-1.087-0.744 0.084-0.729 0.084-0.729 1.205 0.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.493 0.998 0.108-0.776 0.418-1.305 0.762-1.604-2.665-0.305-5.467-1.334-5.467-5.931 0-1.311 0.469-2.381 1.236-3.221-0.124-0.305-0.535-1.524 0.118-3.176 0 0 1.008-0.322 3.301 1.23 0.957-0.266 1.983-0.399 3.003-0.399 1.02 0 2.047 0.133 3.004 0.399 2.294-1.552 3.302-1.23 3.302-1.23 0.653 1.653 0.242 2.871 0.118 3.176 0.77 0.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921 0.43 0.372 0.823 1.102 0.823 2.222v3.293c0 0.319 0.192 0.694 0.801 0.576 4.765-1.589 8.196-6.085 8.196-11.389 0-6.627-5.373-12-12-12z"></path>
                 </svg>
               </span>
-              {data.github_id}
+              {data.github_id} {/* Uses the dummy github_id */}
             </p>
           </div>
           <button
@@ -236,6 +230,8 @@ const Dashboard = () => {
             className='ZaptronFont text-transparent bg-clip-text bg-gradient-to-b from-green-400 to-green-800 tracking-widest z-10 text-center relative text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl'
           >
             SUBMITTED HACKATHONS
+            {/* Inner div for blur/glow effect */}
+            
           </h3>
 
           <table
