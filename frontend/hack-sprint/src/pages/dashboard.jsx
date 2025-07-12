@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 const Dashboard = () => {
   const [data, setData] = useState({
@@ -27,9 +28,13 @@ const Dashboard = () => {
 
   const navigate = useNavigate();
 
+
   const handleLogout = () => {
     localStorage.clear();
-    navigate('/login');
+    toast.success("Logout successfull...", { autoClose: 1000 })
+    setTimeout(() => {
+      navigate('/');
+    }, 1700)
   };
 
   return (
@@ -135,6 +140,7 @@ const Dashboard = () => {
           >
             <div
               style={{
+
                 position: 'relative',
                 width: '120px', // Same size as image
                 height: '120px',
@@ -147,6 +153,7 @@ const Dashboard = () => {
               <img
                 src={data.avatar_url}
                 alt="avatar"
+
                 style={{
                   width: '100%',
                   height: '100%',
